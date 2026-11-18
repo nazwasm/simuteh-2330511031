@@ -55,21 +55,19 @@
 ## Cara Memakai `analisis_daun` (`src/bercak.py`)
 ```python
 import sys, json
-sys.path.append("src")
+sys.path.append('src')
 from utils_cv import baca
 from praproses import praproses
 from bercak import analisis_daun
 
-# 1. Muat parameter praproses dan parameter bercak
-param_pra = json.load(open("hasil/param_praproses.json"))
-param_bercak = json.load(open("hasil/param_bercak.json"))
+param_pra = json.load(open('hasil/param_praproses.json'))
+param_bercak = json.load(open('hasil/param_bercak.json'))
 
-# 2. Baca citra, jalankan praproses, dan analisis bercak
-img = baca("data/sintetis/citra/teh_041.png")
+img = baca('data/sintetis/citra/teh_041.png')
 img_pra = praproses(img, param_pra)
 hasil = analisis_daun(img_pra, param_bercak)
 
-print("Jumlah bercak :", hasil["jumlah_bercak"])
-print("Persen bercak :", hasil["persen_bercak"], "%")
-print("Kelas mutu    :", hasil["kelas"])
+print('Jumlah bercak :', hasil['jumlah_bercak'])
+print('Persen bercak :', hasil['persen_bercak'], '%')
+print('Kelas mutu    :', hasil['kelas'])
 ```
